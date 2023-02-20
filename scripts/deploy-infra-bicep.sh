@@ -89,7 +89,7 @@ cat << EOF > "$script_dir/../infra/azuredeploy.parameters.json"
 EOF
 
 deployment_name="deployment-${USERNAME}-${LOCATION}"
-cd infra
+cd infra/bicep
 echo "Starting Bicep deployment ($deployment_name)"
 az deployment sub create \
   --location "$LOCATION" \

@@ -2,5 +2,6 @@
 default:
 	just --list
 
-deploy-infra:
-	./scripts/deploy-infra.sh
+deploy-infra-bicep:
+	./scripts/deploy-infra-bicep.sh
+
