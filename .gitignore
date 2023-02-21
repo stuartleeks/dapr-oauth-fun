@@ -4,3 +4,10 @@ yarn.lock
 azuredeploy.parameters.json
 output.json
 .env
+
+.terraform/*
+.terraform*
+*.tfstate
+*.tfstate.backup
+backend.tf
+.tfvars
