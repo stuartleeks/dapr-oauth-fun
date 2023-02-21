@@ -133,3 +133,13 @@ az k8s-extension create --cluster-type managedClusters \
 --resource-group "$RESOURCE_GROUP" \
 --name dapr \
 --extension-type Microsoft.Dapr
+
+
+
+echo -e "\n**\n** Deploying ingress-nginx ...\n**"
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+helm upgrade \
+	--install ingress-nginx \
+	ingress-nginx/ingress-nginx \
+	--wait
