@@ -124,12 +124,7 @@ if [[ ${#AKS_NAME} -eq 0 ]]; then
   exit 6
 fi
 
-echo "Getting AKS credentials"
-# Get kubeconfig for the AKS cluster
-az aks get-credentials --resource-group "$RESOURCE_GROUP" --name "$AKS_NAME" --overwrite-existing
-# Update the kubeconfig to use  https://github.com/azure/kubelogin
-kubelogin convert-kubeconfig -l azurecli
-
+"$script_dir/get-kube-login.sh"
 
 ## TODO - can this be configured in the bicep template?
 echo "Configuring Dapr extension"
